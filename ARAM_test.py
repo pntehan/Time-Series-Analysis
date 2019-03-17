@@ -20,11 +20,11 @@ two = pd.read_csv('./Data/yadz.csv').set_index('Time')[365:730]
 AR_restored = pd.Series(two.Data, index=two.index).append(forecast_AR).cumsum()
 print(AR_restored)
 
-# new = pd.DataFrame({'t': two.index, 'd': forecast_AR}).set_index('t')
-# plt.plot(two, color='blue')
-# plt.plot(new, color='red')
-# plt.show()
-# plt.savefig('first_model.png')
+new = pd.DataFrame({'t': two.index, 'd': forecast_AR}).set_index('t')
+plt.plot(two, color='blue')
+plt.plot(new, color='red')
+plt.show()
+plt.savefig('first_model.png')
 
 
 
